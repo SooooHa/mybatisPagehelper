@@ -1,0 +1,25 @@
+server:
+  port: 8099
+  servlet:
+    context-path: /help
+spring:
+  datasource:
+    username: root
+    password: 556677
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # SpringBoot 不支持jsp，使用thymeleaf模板
+  thymeleaf:
+    cache: false  # 热部署，idea debug启动
+    prefix: classpath:/templates/ # 指定网页位置
+    suffix: .html
+pagehelper:
+  helper-dialect: mysql # 数据库类型
+  reasonable: false
+  support-methods-arguments: true
+  params: count==countSql
+  row-bounds-with-count: true
+mybatis:
+  type-aliases-package: cn.demo.bean
+  mapper-locations:  classpath*:mapper/**/**Mapper.xml
+
