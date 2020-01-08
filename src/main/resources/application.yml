@@ -1,7 +1,7 @@
 server:
   port: 8099
   servlet:
-    context-path: /help
+    context-path:
 spring:
   datasource:
     username: root
@@ -15,9 +15,9 @@ spring:
     suffix: .html
 pagehelper:
   helper-dialect: mysql # 数据库类型
-  reasonable: false
+  reasonable: true # 是否合理化分页，pagenum<1时，自动查第一页数据，当pagenum>pages时，自动查询最后一页数据，不启用的话超出返回空
   support-methods-arguments: true
-  params: count==countSql
+  params: count==countSql # 用于从对象中根据属性名取值
   row-bounds-with-count: true
 mybatis:
   type-aliases-package: cn.demo.bean

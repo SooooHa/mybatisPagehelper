@@ -23,8 +23,37 @@ public interface UserMapper {
     @MapKey("id")
     Map<String,Object> mapFind();
 
+    /**
+     * 以username为主键的查询
+     * @return
+     */
     @MapKey("username")
     Map<String, User> getUserInfoMap();
 
-    List<User>dynamicForeach(Integer[] ids);
+
+    /**
+     * 动态sql语句查询
+     * @param ids
+     * @return
+     */
+    List<User> dynamicForeach (Integer[] ids);
+
+
+    /**
+     * 模糊查询
+     * @param gender
+     * @return
+     */
+    List<User> fuzzyQueryBySex (String gender);
+
+    /**
+     * 两个表连接查询
+     * @return
+     */
+    List<Map<String,Object>> selectTwoTable();
+
+
+
+
+
 }

@@ -50,6 +50,12 @@ public class UserController {
         return "redirect:getuser";
     }
 
+    @GetMapping("/fuzzyQueryBySex")
+    public String fuzzyQueryBySex(String sex){
+        userService.fuzzyQueryBySex(sex);
+        return "test";
+    }
+
 
 
 

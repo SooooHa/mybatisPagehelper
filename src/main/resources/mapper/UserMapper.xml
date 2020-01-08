@@ -31,4 +31,25 @@
             </if>
         </where>
     </select>
+
+    <select id="fuzzyQueryBySex" resultType="user" parameterType="String">
+        SELECT * FROM `user` WHERE sex like "%"#{sex}"%"
+    </select>
+
+    <select id="selectTwoTable" resultType="hashMap">
+        SELECT ur.role,u.username FROM `user` u ,user_role ur WHERE  u.statu = ur.statuid
+    </select>
+
+
+    <select id="selectTwoTable2" resultType="hashMap">
+        SELECT ur.role,u.username FROM `user` u ,user_role ur WHERE  u.statu = ur.statuid
+    </select>
+
+
+
+
+
+
+
+
 </mapper>

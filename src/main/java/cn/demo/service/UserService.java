@@ -43,4 +43,8 @@ public class UserService {
     private void updateUser(User user){
         userMapper.updateUser(user);
     }
+
+    public List<User> fuzzyQueryBySex(String sex){
+        return userMapper.fuzzyQueryBySex(sex);
+    }
 }

@@ -68,4 +68,22 @@ public class DaoTest {
         System.out.println(users);
     }
 
+
+    @Test
+    public void twoTableTest(){
+        List<Map<String, Object>> maps = userMapper.selectTwoTable();
+        System.out.println(maps);
+    }
+
+
+    @Test
+    public void testFuzzSearcher(){
+        List<User> male = userMapper.fuzzyQueryBySex("male");
+        System.out.println(male);
+    }
+
+
+
+
+
 }
